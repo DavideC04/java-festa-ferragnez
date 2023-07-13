@@ -2,8 +2,7 @@ package com.ferragnez.party;
 
 import java.util.Scanner;
 
-public class CheckGuest {
-
+public class WhileCheckGuest {
     public static void main(String[] args) {
         // definisco le variabili
         String guestName;
@@ -19,16 +18,21 @@ public class CheckGuest {
         System.out.println("Qual è il tuo nome: ");
         guestName = scan.nextLine();
 
-        // per sapere se il nome è incluso nell'array uso un ciclo for
-        for (int i = 0; i < guets.length; i++) {
-            // se il nome si trova nell'array, il boolean diventerà true
-            if (guestName.equals(guets[i])) {
-                invite = true;
-                break;
+        // per sapere se il nome è incluso nell'array uso un ciclo while (bonus)
+        // dichiaro ed inizio un contatore uguale a 0
 
-            }
+        int i = 0;
 
-        }
+        // ciclo while
+
+       while (i < guets.length) {
+           if (guestName.equals(guets[i])) {
+               invite = true;
+               break;
+
+           }
+           i++;
+       }
         // se il boolean è true, benvenuto alla festa, altrimenti se ne vada.
         if (invite) {
             System.out.println("Benvenuto alla festa dei Ferragnez!");
@@ -40,4 +44,5 @@ public class CheckGuest {
         scan.close();
 
     }
+
 }
